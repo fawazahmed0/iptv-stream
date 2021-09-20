@@ -19,20 +19,21 @@
 <body>
     <div class="container">
         <video id="my-player" class="video-js vjs-big-play-centered border border-dark" controls preload="auto"
-            data-setup='{"fluid": true}' hidden>
+          poster="//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png"  data-setup='{"fluid": true}' hidden>
 
         </video>
 
         <div id="usage" class="mt-3" hidden>
-            <h4>Easy steps to use:</h4>
+            <h4>Easy step to watch IPTV Online:</h4>
             <ol>
-                <li><span class="text-primary">fawazahmed95.github.io/iptv-stream?url=</span> + <span
-                        class="text-danger">{your iptv url}</span></li>
+                <li><div>Use URL in below format:</div>
+                    <span class="text-primary">yielding-meeting.surge.sh?url=</span> + <span
+                        class="text-danger">{your iptv m3u8 url}</span></li>
             </ol>
             <h5>Example:</h5>
-            <a href="http://fawazahmed95.github.io/iptv-stream?url=https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8"
+            <a href="http://yielding-meeting.surge.sh?url=https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8"
                 target="_blank" rel="noopener noreferrer">
-                <span class="text-primary">fawazahmed95.github.io/iptv-stream?url=</span><span
+                <span class="text-primary">yielding-meeting.surge.sh?url=</span><span
                     class="text-danger">https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8</span>
 
             </a>
@@ -73,8 +74,8 @@
             else
                 document.querySelector('#usage').removeAttribute('hidden')
 
-            videojs('my-player').poster('//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png')
-            
+           // videojs('my-player').poster('//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png')
+
             // Muted autoplay
             // videojs('my-player').autoplay('any');
 
