@@ -54,8 +54,8 @@
     <script>
                    // Redirect https to http to avoid streaming issues
                    if (location.protocol !== "http:") 
-                  location.protocol = "http:";
-                  
+                   location.replace(`http:${location.href.substring(location.protocol.length)}`);
+
         function ready() {
  
 
