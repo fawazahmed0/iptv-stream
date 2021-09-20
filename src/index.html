@@ -52,7 +52,13 @@
     </div>
 
     <script>
+                   // Redirect https to http to avoid streaming issues
+                   if (location.protocol !== "http:") 
+                  location.protocol = "http:";
+                  
         function ready() {
+ 
+
 
             /*
             videojs('my-player', {
