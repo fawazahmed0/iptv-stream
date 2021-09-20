@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container">
+        <video id="my-player" class="video-js vjs-big-play-centered border border-dark" controls preload="auto"
+            data-setup='{"fluid": true}' hidden>
+
+        </video>
+
+        <div id="usage" class="mt-3" hidden>
+            <h4>Easy steps to use:</h4>
+            <ol>
+                <li><span class="text-primary">fawazahmed95.github.io/iptv-stream?url=</span> + <span
+                        class="text-danger">{your iptv url}</span></li>
+            </ol>
+            <h5>Example:</h5>
+            <a href="http://fawazahmed95.github.io/iptv-stream?url=https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8"
+                target="_blank" rel="noopener noreferrer">
+                <span class="text-primary">fawazahmed95.github.io/iptv-stream?url=</span><span
+                    class="text-danger">https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8</span>
+
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        function ready() {
+
+            /*
+            videojs('my-player', {
+                    controls: true,
+          autoplay: 'any',
+          preload: 'auto',
+          fluid:true,
+          class:'video-js vjs-big-play-centered',
+          poster: '//vjs.zencdn.net/v/oceans.png',
+          sources: [{
+            src: 'https://dmiffthvll.cdn.mangomolo.com/noordubaitv/smil:noordubaitv.smil/playlist.m3u8',
+            type: 'application/x-mpegURL'
+          }]
+        });
+        */
+
+
+            var currenturl = new URL(window.location)
+            var urlparams = currenturl.searchParams;
+
+            let streamurl = urlparams.get('url')
+            if (streamurl) {
+                document.querySelector('#my-player').removeAttribute('hidden')
+                videojs('my-player').src({
+                    type: 'application/x-mpegURL',
+                    src: decodeURIComponent(streamurl)
+                });
+            }
+            else
+                document.querySelector('#usage').removeAttribute('hidden')
+
+            videojs('my-player').poster('//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png')
+            
+            // Muted autoplay
+            // videojs('my-player').autoplay('any');
+
+        }
+
+        document.addEventListener("DOMContentLoaded", ready);
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
