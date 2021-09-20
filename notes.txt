@@ -1,0 +1,11 @@
+How to deploy
+ref: 
+https://surge.sh/help/getting-started-with-surge
+
+npm install --global surge
+
+go into the directory which you want to deploy
+type 
+surge
+give domain name as:
+yielding-meeting.surge.sh
