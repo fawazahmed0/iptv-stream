@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav id="mynavbar" class="navbar navbar-light bg-light" hidden>
         <div class="container d-flex justify-content-end">
           <a href="https://github.com/fawazahmed0/iptv-stream" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-github" viewBox="0 0 16 16">
@@ -27,13 +27,13 @@
         </div>
       </nav>
 
-    <div class="container">
+    <div class="container mt-2">
         <video id="my-player" class="video-js vjs-big-play-centered border border-dark" controls preload="auto"
           poster="//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png"  data-setup='{"fluid": true}' hidden>
 
         </video>
 
-        <div id="usage" class="mt-3" hidden>
+        <div id="usage"  hidden>
             <h4>Easy step to watch IPTV Online:</h4>
             <ol>
                 <li><div>Use URL in below format:</div>
@@ -81,8 +81,11 @@
                     src: decodeURIComponent(streamurl)
                 });
             }
-            else
+            else{
                 document.querySelector('#usage').removeAttribute('hidden')
+                document.querySelector('#mynavbar').removeAttribute('hidden')
+            }
+              
 
            // videojs('my-player').poster('//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png')
 
