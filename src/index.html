@@ -28,10 +28,10 @@
       </nav>
 
     <div class="container mt-2">
-        <video id="my-player" class="video-js vjs-big-play-centered border border-dark" controls preload="auto"
-          poster="//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png"  data-setup='{"fluid": true}' hidden>
+        <video-js id="my-player" class="video-js vjs-big-play-centered border border-dark d-none" controls preload="auto"
+          poster="//raw.githubusercontent.com/fawazahmed0/tiger/master/peace/clickhere.png"  data-setup='{"fluid": true}'>
 
-        </video>
+        </video-js>
 
         <div id="usage"  hidden>
             <h4>Easy step to watch IPTV Online:</h4>
@@ -81,7 +81,7 @@
 
             let streamurl = urlparams.get('url')
             if (streamurl) {
-                document.querySelector('#my-player').removeAttribute('hidden')
+                document.querySelector('#my-player').classList.remove("d-none")
                 videojs('my-player').src({
                     type: 'application/x-mpegURL',
                     src: decodeURIComponent(streamurl)
